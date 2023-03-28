@@ -23,3 +23,14 @@
     - reassign it's `next` to `previousNode`, 
     - now that the swapping is done, shift the `currentNode` and `previousNode` forward to it's original `next` and the node itself
   - When the while loop exits, `currentNode` is `null`, `previousNode` used to be the `tail` of the list, now is the `head`, return `previousNode`
+
+
+## Trees
+
+# Get depth of binary tree
+- Concept: the value of each node is not important, the depth of a tree node is 1 + the depth of its left or right child tree node, whichever is greater--think about this recursively
+- Hint: make two recursively function calls, one for the left branch, one for the right
+- Solution: 
+  - catch case: if node === null, return 0
+  - depth of tree going down the left branch = 1 + depth of left tree; depth of tree going down the left branch = 1 + depth of left tree; 
+  - get the Math.max(depth of tree going down the left branch, depth of tree going down the right branch)
