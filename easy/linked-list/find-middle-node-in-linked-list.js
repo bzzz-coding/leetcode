@@ -19,6 +19,27 @@ https://leetcode.com/problems/middle-of-the-linked-list
  * @return {ListNode}
  */
 
+// starts with first node, two pointers, one at x1 speed and the other at x2 speed
+// if 5 nodes, return the 3rd; 2nd and 3rd, 3rd and 5th, 5th is the end, return 3rd
+// if 6 nodes, return the 4th; 2nd and 3rd, 3rd and 5th, 5th has a next which is the end, so return 4th
+
+function findMiddleNode(firstNode) {
+  // start both pointers from firstNode
+  let slow = firstNode;
+  let fast = firstNode;
+  // if both fast and fast.next exist, update slow and fast
+  while (fast && fast.next) {
+    slow = slow.next;
+    fast = fast.next.next; // might be null, will decide if while loop continues
+  }
+  // if list has only 1 node, while loop is skipped and firstNode is returned
+  // else if while loop exits, fast is either at the end or one node before end, slow is updated to be at the middle or the second middle node
+  return slow
+}
+
+
+
+
 var middleNode = function (head) {
   let slow = head;
   let fast = head;
