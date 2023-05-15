@@ -25,7 +25,7 @@ function reverseList(head) {
   let reversed = head;
   reversed.next = null;
   while (remaining) {
-    [reversed, reversed.next, remaining] = [remaining, reversed, remaining.next]
+    [reversed, reversed.next, remaining] = [remaining, reversed, remaining.next];
   }
   // if no remaining, return reversed
   return reversed

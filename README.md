@@ -1,5 +1,14 @@
 # leetcode
 
+## Two Sum
+- Concept: use a Hashtable to store and quickly lookup values
+- Hint: Loop through the array, and use a JS obj to keep track of the index of numbers already visited (as value), and the number needed to add up to the target (as property), so when when the loop gets to the number, immediately return both indexes
+- Solution: easy/twoSum.js
+- create a empty obj {};
+- start a for loop to iterate through the arr, for each element:
+  - first check if the current number is a property of obj, if so, it means that it's counter number has already been seen, and it's index is the value of this property, return the value and the current index
+  - if not in obj, store in the obj the number needed for the current number to get to target (target - current number), and the current index, as a property:value pair
+
 ## Linked Lists
 
 ### Finding the middle of a linked list
