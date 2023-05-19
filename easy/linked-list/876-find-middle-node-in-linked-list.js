@@ -61,3 +61,12 @@ var middleNode = function (head) {
       - `fast` moves at 2x speed, to `fast.next.next` 
   - When `fast` reaches the end of the linked list (`fast.next === null`), `slow` is at the middle of the list
 */
+
+// review:
+const middleNode2 = (firstNode) => {
+  let [slow, fast] = [firstNode, firstNode];
+  while (fast && fast.next) {
+    [slow, fast] = [slow.next, fast.next.next];
+  }
+  return slow;
+};
